@@ -1,52 +1,33 @@
 {
-    "version": "1",
-    "inputs": [
-        {
-            "name": "instruction",
-            "description": "The prompt to provide to the model.",
+	"version": "1",
+	"inputs": [
+		{
+			"name": "prompt",
+			"type": "string",
+			"required": true,
+			"max": 2048,
+			"description": "The prompt to complete."
+		}
+	],
+    "output": {
+        "completion": {
             "type": "string",
-            "required": true
-        },
-        {
-            "name": "temperature",
-            "description": "Temperature setting for the model.",
-            "type": "number",
-            "required": false,
-            "min": 0,
-            "max": 1
-        },
-        {
-            "name": "top_p",
-            "description": "Top p setting for the model.",
-            "type": "number",
-            "required": false,
-            "min": 0,
-            "max": 1
-        },
-        {
-            "name": "top_k",
-            "description": "Top k setting for the model.",
-            "type": "number",
-            "required": false,
-            "min": 1
-        },
-        {
-            "name": "generate_len",
-            "description": "Length of the generated text.",
-            "type": "number",
-            "required": false,
-            "min": 1
+            "path": "outputs.sequence"
         }
-    ],
-    "examples": [
-        {
-            "inputs": {
-                "instruction": "I need to write a tweet on how AI is going to transform the world. Give me 3 alternatives."
-            },
-            "output": {
-                "outputs": "Sure, here are three alternatives to your tweet on how AI is going to transform the world:  \n 1. \"AI is revolutionizing various industries, from healthcare to finance, and making our lives easier and more efficient. #AI #Transformation #Empowerment\" ..."
-            }
-        }
-    ]
+    },
+	"examples": [
+		{
+			"inputs": {
+				"prompt": "Software developers start with a \"Hello, [MASK]!\" script."
+			},
+			"output": {
+				"outputs": {
+					"score": 0.8070755004882812,
+					"token": 2088,
+					"token_str": "world",
+					"sequence": "software developers start with a \" hello, world! \" script."
+				}
+			}
+		}
+	]
 }
-
