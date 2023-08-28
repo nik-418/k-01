@@ -2,7 +2,7 @@
 	"version": "1",
 	"inputs": [
 		{
-			"name": "prompt",
+			"name": "prompt", 
 			"type": "string",
 			"required": true,
 			"max": 2048,
