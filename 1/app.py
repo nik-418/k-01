@@ -16,6 +16,8 @@ def init():
         "model": model
     }
 
+    print("foo")
+
     return context
 
 # @app.handler runs for every call
